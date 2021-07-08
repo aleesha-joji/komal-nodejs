@@ -15,13 +15,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm run build'
             }
         }
         stage('Unit test') {
             steps {
-                sh 'chmod +x test.sh'
-                sh 'test.sh'
+                sh 'chmod +x nodejs/test.sh'
+                sh 'nodejs/test.sh'
             }
         }
         stage('Sonarqube analysis') {
